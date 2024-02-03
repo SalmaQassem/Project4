@@ -41,6 +41,20 @@ soundIcons.forEach((icon) => {
     });
   });
 });
+recordIcons.forEach((icon) => {
+  icon.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+  icon.addEventListener("pointerdown", () => {
+    icon.classList.add("animate");
+    icon.addEventListener("pointerup", () => {
+      icon.classList.remove("animate");
+    });
+    icon.addEventListener("pointerout", () => {
+      icon.classList.remove("animate");
+    });
+  });
+});
 document.querySelector(".show-success").addEventListener("click", () => {
   successModal.classList.add("show");
   overlay.classList.add("show");
