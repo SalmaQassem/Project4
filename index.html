@@ -15,6 +15,56 @@
   </head>
 
   <body>
+    <div class="overlay position-fixed top-50 start-50 translate-middle"></div>
+    <div class="success-card rounded-5 p-3">
+      <div class="card-wrapper h-100 rounded-5">
+        <div
+          class="img-wrapper d-flex justify-content-center align-items-center"
+        >
+          <img
+            src="./media/images/bunny.svg"
+            alt="bunny image"
+            class="w-100 object-fit-contain"
+          />
+        </div>
+        <div class="outer-card py-3 rounded-1">
+          <div
+            class="text-card d-flex gap-3 justify-content-center align-items-center"
+          >
+            <div class="content d-flex flex-column align-items-center">
+              <span class="message-text">correct answer</span>
+              <span class="score-text">5/5</span>
+            </div>
+            <div class="score-icon-wrapper">
+              <img
+                src="./media/images/object.svg"
+                alt="score image"
+                class="w-100 object-fit-contain"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="arrows py-4 d-flex justify-content-center gap-5">
+          <button
+            class="left-arrow arrow d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="./media/images/chevron_left.svg"
+              class="object-fit-contain"
+            />
+          </button>
+          <button
+            class="left-right arrow d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="./media/images/chevron_right.svg"
+              class="object-fit-contain"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="show-success">show success</button>
     <div class="homepage">
       <div class="vector cloud position-relative start-50 translate-middle">
         <img
@@ -102,8 +152,10 @@
                   />
                 </div>
                 <div
-                  class="d-flex justify-content-center align-items-center p-2 rounded-circle icon speak"
+                  class="d-flex justify-content-center align-items-center p-2 position-relative rounded-circle icon speak"
                 >
+                  <div class="outline"></div>
+                  <div class="outline" id="delayed"></div>
                   <img
                     src="./media/images/speakIcon.svg"
                     class="w-100 h-100 object-fit-contain"

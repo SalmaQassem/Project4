@@ -4,6 +4,8 @@ const gamePage = document.querySelector(".game");
 const cards = document.querySelectorAll(".card-wrapper");
 const soundIcons = document.querySelectorAll(".icon.sound");
 const recordIcons = document.querySelectorAll(".icon.speak");
+const successModal = document.querySelector(".success-card");
+const overlay = document.querySelector(".overlay");
 playButton.addEventListener("click", () => {
   homePage.classList.add("hide");
   homePage.addEventListener("animationend", () => {
@@ -38,4 +40,8 @@ soundIcons.forEach((icon) => {
       icon.classList.remove("clicked");
     });
   });
+});
+document.querySelector(".show-success").addEventListener("click", () => {
+  successModal.classList.add("show");
+  overlay.classList.add("show");
 });
