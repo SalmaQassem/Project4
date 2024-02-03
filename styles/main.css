@@ -48,20 +48,24 @@ a {
   line-height: 6vw;
 }
 
-.game .cards .game-card .card-wrapper .card-back, .game .cards .game-card .card-wrapper .card-front {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.game .cards-wrapper .cards .game-card .card-wrapper .card-back, .game .cards-wrapper .cards .game-card .card-wrapper .card-front {
   backface-visibility: hidden;
 }
-.game .cards .game-card .card-wrapper .card-back img, .game .cards .game-card .card-wrapper .card-front img {
-  width: 100%;
-  height: auto;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+
+.game .cards-wrapper .cards .icons .icon {
+  width: 10vw;
+  height: 10vw;
+  background-color: #f45780;
+  color: #fff;
+  font-size: 3rem;
+  visibility: hidden;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .game .cards-wrapper .cards .icons .icon {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .homepage {
@@ -169,10 +173,12 @@ a {
 .game.show {
   visibility: visible;
 }
+.game .game-vector {
+  height: 30%;
+}
 .game .game-vector.plane {
   width: 40vw;
   position: relative;
-  top: 10%;
   left: 10%;
 }
 .game .game-vector.plane .vector-text {
@@ -184,6 +190,8 @@ a {
   color: #ef0d53;
   font-family: MochiyPopPOne-Regular;
   font-size: 2.125rem;
+  font-size: 2vw;
+  white-space: nowrap;
 }
 .game .game-vector.plane .vector-text:first-letter {
   text-transform: capitalize;
@@ -194,16 +202,28 @@ a {
   right: 0;
   bottom: 0;
 }
-.game .cards {
-  position: relative;
-  gap: 12rem;
+.game .cards-wrapper {
+  flex-grow: 1;
 }
-.game .cards .game-card {
-  width: 22.3125rem;
-  height: 20.3125rem;
+.game .cards-wrapper .cards {
+  position: relative;
+  gap: 10%;
+}
+@media (min-width: 992px) {
+  .game .cards-wrapper .cards {
+    gap: 12.5%;
+  }
+}
+.game .cards-wrapper .cards .game-card {
+  width: 40%;
   background-color: transparent;
 }
-.game .cards .game-card .card-wrapper {
+@media (min-width: 992px) {
+  .game .cards-wrapper .cards .game-card {
+    width: 37.5%;
+  }
+}
+.game .cards-wrapper .cards .game-card .card-wrapper {
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -212,52 +232,70 @@ a {
   box-shadow: 3px 4px 9px 0px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-.game .cards .game-card .card-wrapper.show {
+.game .cards-wrapper .cards .game-card .card-wrapper.show {
   animation-name: show;
   animation-duration: 0.9s;
   animation-timing-function: ease;
   animation-iteration-count: 1;
 }
-.game .cards .game-card .card-wrapper.is-flipped {
+.game .cards-wrapper .cards .game-card .card-wrapper.is-flipped {
   transform: rotateY(180deg);
+  border-color: #cbe6ff;
 }
-.game .cards .game-card .card-wrapper .card-front .vectors-wrapper {
-  width: 100%;
-  height: 10%;
+.game .cards-wrapper .cards .game-card .card-wrapper .card-front .vectors-wrapper {
+  width: 70%;
+  bottom: 4%;
+  left: 2%;
 }
-.game .cards .game-card .card-wrapper .card-front .vectors-wrapper img {
+.game .cards-wrapper .cards .game-card .card-wrapper .card-front .vectors-wrapper .vector {
   width: 50%;
 }
-.game .cards .game-card .card-wrapper .card-front .vectors-wrapper img:nth-of-type(2) {
-  left: 35%;
+.game .cards-wrapper .cards .game-card .card-wrapper .card-front .vectors-wrapper .vector:nth-of-type(2) {
+  left: -18%;
   z-index: 1000;
 }
-.game .cards .game-card .card-wrapper .card-back {
+.game .cards-wrapper .cards .game-card .card-wrapper .card-back {
   position: relative;
   top: 0;
   transform: rotateY(180deg);
-  /*p {
-    width: 100%;
-    height: 10%;
-    margin: 0 !important;
-    font-family: "NotoSans-SemiBold";
-    font-size: 4vw;
-    text-align: center;
-    @media (min-width: 768px) {
-      & {
-        font-size: 2.8vw;
-      }
-    }
-  }*/
 }
-.game .cards .game-card .card-wrapper .text {
+.game .cards-wrapper .cards .game-card .card-wrapper .text {
   color: #000;
   font-size: 1.9375rem;
+  font-size: 3vw;
   font-family: MochiyPopPOne-Regular;
   text-align: center;
 }
-.game .cards .game-card .card-wrapper .text::first-letter {
+@media (min-width: 992px) {
+  .game .cards-wrapper .cards .game-card .card-wrapper .text {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 1200px) {
+  .game .cards-wrapper .cards .game-card .card-wrapper .text {
+    font-size: 2vw;
+  }
+}
+.game .cards-wrapper .cards .game-card .card-wrapper .text::first-letter {
   text-transform: capitalize;
+}
+.game .cards-wrapper .cards .game-card:nth-of-type(2) .card-wrapper .card-front .vectors-wrapper {
+  top: 4%;
+  right: 2%;
+  bottom: initial;
+  left: initial;
+}
+.game .cards-wrapper .cards .icons .icon.sound.clicked {
+  animation-name: scale;
+  animation-duration: 0.5s;
+  animation-timing-function: "ease";
+  animation-iteration-count: 1;
+}
+.game .cards-wrapper .cards .icons .icon.show {
+  animation-name: increase;
+  animation-duration: 0.5s;
+  animation-timing-function: "ease";
+  animation-iteration-count: 1;
 }
 
 @keyframes hide {
@@ -277,5 +315,27 @@ a {
   }
   100% {
     transform: translateX(0) rotate(0);
+  }
+}
+@keyframes scale {
+  0% {
+    scale: 0.8;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes increase {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
   }
 }/*# sourceMappingURL=main.css.map */

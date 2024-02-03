@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="game">
+    <div class="game d-flex flex-column">
       <div class="game-vector plane">
         <span class="vector-text">click on box</span>
         <img
@@ -56,65 +56,107 @@
           class="w-100 h-100 object-fit-contain"
         />
       </div>
-      <div class="w-100 position-absolute top-50 start-50 translate-middle">
+      <div class="cards-wrapper w-100">
         <div class="container">
           <div class="cards d-flex justify-content-center">
-            <div class="game-card d-flex flex-column gap-5" data-id="card1">
-              <div class="card-wrapper">
+            <div class="game-card d-flex flex-column gap-5">
+              <div class="card-wrapper" data-id="card1">
                 <div
-                  class="card-front px-5 d-flex flex-column justify-content-center"
+                  class="w-100 h-100 card-front px-2 px-md-4 py-4 position-absolute top-0 start-0 d-flex justify-content-center align-items-center"
                 >
                   <p class="text m-0">travelling by air is popular today</p>
-                  <div class="w-100 vectors-wrapper">
+                  <div class="vectors-wrapper position-absolute d-flex">
                     <img
-                      src="./media/images/cloud1.svg"
+                      src="./media/images/cloud1.png"
                       alt="cloud-1-vector"
-                      class="object-fit-contain position-absolute"
+                      class="vector w-50 object-fit-contain"
                     />
                     <img
-                      src="./media/images/cloud2.svg"
+                      src="./media/images/cloud2.png"
                       alt="cloud-2-vector"
-                      class="object-fit-contain position-absolute"
+                      class="vector position-relative object-fit-contain"
                     />
                   </div>
                 </div>
-                <div class="card-back">
-                  <div
-                    class="img-wrapper d-flex flex-column align-items-center"
-                  >
+                <div class="w-100 h-100 card-back d-flex flex-column">
+                  <div class="img-wrapper">
                     <img
                       src="./media/images/travel.jpg"
                       alt="Front Image"
-                      class="w-100 object-fit-contain"
+                      class="img w-100 h-100 object-fit-cover"
                     />
-                    <!--<img
-                      src="./media/images/textBackground.svg"
-                      alt="Front Image"
-                      class="w-100 object-fit-contain"
-                    />-->
-                    <p class="text m-0">sad man</p>
                   </div>
+                  <p class="text m-0 p-2">to travel by air</p>
+                </div>
+              </div>
+              <div
+                data-id="card1"
+                class="d-flex gap-4 gap-lg-5 justify-content-center align-items-center icons"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center p-2 rounded-circle icon sound"
+                >
+                  <img
+                    src="./media/images/soundIcon.svg"
+                    class="w-100 h-100 object-fit-contain"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center p-2 rounded-circle icon speak"
+                >
+                  <img
+                    src="./media/images/speakIcon.svg"
+                    class="w-100 h-100 object-fit-contain"
+                  />
                 </div>
               </div>
             </div>
-            <div class="game-card d-flex flex-column gap-5" data-id="card1">
-              <div class="card-wrapper">
+            <div class="game-card d-flex flex-column gap-5">
+              <div class="card-wrapper" data-id="card2">
                 <div
-                  class="card-front p-md-3 p-2 d-flex flex-column justify-content-center"
+                  class="w-100 h-100 card-front px-2 px-md-4 py-4 position-absolute top-0 start-0 d-flex justify-content-center align-items-center"
                 >
-                  <p class="text m-0">planes are parked at the airport</p>
-                </div>
-                <div class="card-back">
+                  <p class="text m-0">travelling by air is popular today</p>
                   <div
-                    class="img-wrapper d-flex flex-column align-items-center"
+                    class="vectors-wrapper position-absolute d-flex justify-content-end"
                   >
                     <img
-                      src="./media/images/travel.jpg"
-                      alt="Front Image"
-                      class="w-100 object-fit-contain"
+                      src="./media/images/cloud3.png"
+                      alt="cloud-3-vector"
+                      class="vector w-50 object-fit-contain"
                     />
-                    <p class="text m-0">sad man</p>
                   </div>
+                </div>
+                <div class="w-100 h-100 card-back d-flex flex-column">
+                  <div class="img-wrapper">
+                    <img
+                      src="./media/images/airport.jpg"
+                      alt="Front Image"
+                      class="img w-100 h-100 object-fit-cover"
+                    />
+                  </div>
+                  <p class="text m-0 p-2">an airport</p>
+                </div>
+              </div>
+              <div
+                data-id="card2"
+                class="d-flex gap-4 gap-lg-5 justify-content-center align-items-center icons"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center p-2 rounded-circle icon sound"
+                >
+                  <img
+                    src="./media/images/soundIcon.svg"
+                    class="w-100 h-100 object-fit-contain"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-center p-2 rounded-circle icon speak"
+                >
+                  <img
+                    src="./media/images/speakIcon.svg"
+                    class="w-100 h-100 object-fit-contain"
+                  />
                 </div>
               </div>
             </div>

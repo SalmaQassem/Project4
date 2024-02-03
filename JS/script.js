@@ -2,6 +2,8 @@ const homePage = document.querySelector(".homepage");
 const playButton = document.querySelector(".play-button");
 const gamePage = document.querySelector(".game");
 const cards = document.querySelectorAll(".card-wrapper");
+const soundIcons = document.querySelectorAll(".icon.sound");
+const recordIcons = document.querySelectorAll(".icon.speak");
 playButton.addEventListener("click", () => {
   homePage.classList.add("hide");
   homePage.addEventListener("animationend", () => {
@@ -17,7 +19,7 @@ cards.forEach((card) => {
   card.addEventListener("click", (e) => {
     card.classList.add("is-flipped");
     const cardId = card.dataset.id;
-    /*const icons = document.querySelectorAll(
+    const icons = document.querySelectorAll(
       `.icons[data-id="${cardId}"] .icon`
     );
     icons.forEach((icon) => {
@@ -26,6 +28,14 @@ cards.forEach((card) => {
       icon.addEventListener("animationend", () => {
         icon.classList.remove("show");
       });
-    });*/
+    });
+  });
+});
+soundIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    icon.classList.add("clicked");
+    icon.addEventListener("animationend", () => {
+      icon.classList.remove("clicked");
+    });
   });
 });
