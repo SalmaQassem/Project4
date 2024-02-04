@@ -168,30 +168,37 @@
         </button>
         <div class="container">
           <div class="cards d-flex justify-content-center">
-            <div class="game-card d-flex flex-column gap-5">
+            <div class="game-card third-screen d-flex flex-column gap-5">
               <div class="card-wrapper" data-id="card1">
                 <div
-                  class="w-100 h-100 card-front position-absolute top-0 start-0 d-flex justify-content-center align-items-center"
+                  class="w-100 h-100 card-front px-2 px-md-4 py-4 position-absolute top-0 start-0 d-flex justify-content-center align-items-center"
                 >
-                  <img
-                    src="./media/images/seatbelt.svg"
-                    alt="img-1"
-                    class="w-100 h-100"
-                    style="filter: grayscale(100%)"
-                  />
-                </div>
-                <div
-                  class="w-100 h-100 card-back d-flex flex-column justify-content-between"
-                >
-                  <div class="img-wrapper">
+                  <p class="text m-0">
+                    there is a strict security check where you need to leave
+                    sharp objects and water.
+                  </p>
+                  <div class="vectors-wrapper position-absolute d-flex">
                     <img
-                      src="./media/images/seatbelt.svg"
-                      alt="Front Image"
-                      tyle="filter: grayscale(0)"
-                      class="w-100 h-100 object-fit-contain"
+                      src="./media/images/cloud1.png"
+                      alt="cloud-1-vector"
+                      class="vector w-50 object-fit-contain"
+                    />
+                    <img
+                      src="./media/images/cloud2.png"
+                      alt="cloud-2-vector"
+                      class="vector position-relative object-fit-contain"
                     />
                   </div>
-                  <p class="text m-0 p-2">to fasten the seatbelt</p>
+                </div>
+                <div class="w-100 h-100 card-back d-flex flex-column">
+                  <div class="img-wrapper">
+                    <img
+                      src="./media/images/game3.svg"
+                      alt="Front Image"
+                      class="img w-100 h-100 object-fit-cover"
+                    />
+                  </div>
+                  <p class="text m-0 p-2">A security check</p>
                 </div>
               </div>
               <div
@@ -204,7 +211,6 @@
                   <img
                     src="./media/images/soundIcon.svg"
                     class="w-100 h-100 object-fit-contain"
-                    alt="sound-icon"
                   />
                 </div>
                 <div
@@ -215,59 +221,6 @@
                   <img
                     src="./media/images/speakIcon.svg"
                     class="w-100 h-100 object-fit-contain"
-                    alt="speak-icon"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="game-card d-flex flex-column gap-5">
-              <div class="card-wrapper" data-id="card2">
-                <div
-                  class="w-100 h-100 card-front position-absolute top-0 start-0 d-flex justify-content-center align-items-center"
-                >
-                  <img
-                    src="./media/images/locker.svg"
-                    alt="img-2"
-                    style="filter: grayscale(100%)"
-                    class="w-100 h-100"
-                  />
-                </div>
-                <div
-                  class="w-100 h-100 card-back d-flex flex-column justify-content-between"
-                >
-                  <div class="img-wrapper">
-                    <img
-                      src="./media/images/locker.svg"
-                      alt="Front Image"
-                      style="filter: grayscale(0)"
-                      class="w-100 object-fit-contain"
-                    />
-                  </div>
-                  <p class="text m-0 p-2">an overhead locker</p>
-                </div>
-              </div>
-              <div
-                data-id="card2"
-                class="d-flex gap-4 gap-lg-5 justify-content-center align-items-center icons"
-              >
-                <div
-                  class="d-flex justify-content-center align-items-center p-2 rounded-circle icon sound"
-                >
-                  <img
-                    src="./media/images/soundIcon.svg"
-                    class="w-100 h-100 object-fit-contain"
-                    alt="sound-icon"
-                  />
-                </div>
-                <div
-                  class="d-flex justify-content-center align-items-center p-2 position-relative rounded-circle icon speak"
-                >
-                  <div class="outline"></div>
-                  <div class="outline" id="delayed"></div>
-                  <img
-                    src="./media/images/speakIcon.svg"
-                    class="w-100 h-100 object-fit-contain"
-                    alt="speak-icon"
                   />
                 </div>
               </div>

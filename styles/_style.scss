@@ -419,6 +419,8 @@
     height: 30%;
     &.plane {
       width: 70vw;
+      height: fit-content;
+      margin-top: 1rem;
       position: relative;
       left: 10%;
       .vector-text {
@@ -445,7 +447,7 @@
       }
       @include mediaQuery($medScreen_min_width) {
         & {
-          width: 50vw;
+          width: 40vw;
           .vector-text {
             font-size: 2.5vw;
           }
@@ -466,6 +468,7 @@
       position: fixed;
       right: 0;
       bottom: 0;
+      z-index: -1;
       @include mediaQuery($Tablet_min_width) {
         & {
           width: 24vw;
@@ -555,12 +558,8 @@
             transform: rotateY(180deg);
             border-color: $green-1;
           }
-
           .card-front {
             @extend %card-f-b;
-            img {
-              object-fit: cover;
-            }
             .vectors-wrapper {
               width: 70%;
               bottom: 4%;
@@ -604,7 +603,6 @@
             }
           }
         }
-
         &:nth-of-type(2) {
           .card-wrapper {
             .card-front {
@@ -614,6 +612,24 @@
                 bottom: initial;
                 left: initial;
               }
+            }
+          }
+        }
+        &.third-screen {
+          width: 100%;
+          .card-wrapper {
+            .vectors-wrapper {
+              width: 40%;
+            }
+          }
+          @include mediaQuery($smallScreen_min_width) {
+            & {
+              width: 70%;
+            }
+          }
+          @include mediaQuery($largeScreen_min_width) {
+            & {
+              width: 50%;
             }
           }
         }
