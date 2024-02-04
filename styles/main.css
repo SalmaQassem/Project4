@@ -372,6 +372,10 @@ a {
   transform: rotateY(180deg);
   border-color: #cbe6ff;
 }
+.game .cards-wrapper .cards .game-card .card-wrapper .card-front img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .game .cards-wrapper .cards .game-card .card-wrapper .card-front .vectors-wrapper {
   width: 70%;
   bottom: 4%;

@@ -358,7 +358,9 @@
 
           .card-front {
             @extend %card-f-b;
-
+            img {
+              object-fit: cover;
+            }
             .vectors-wrapper {
               width: 70%;
               bottom: 4%;
@@ -381,7 +383,6 @@
             top: 0;
             transform: rotateY(180deg);
           }
-
           .text {
             color: $black-1;
             font-size: 1.9375rem;
