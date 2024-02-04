@@ -56,6 +56,10 @@ a {
   backface-visibility: hidden;
 }
 
+.control-icon.music, .control-icon.volume {
+  background: linear-gradient(5deg, #f00f55 40%, #ee3f6c 40% 100%);
+}
+
 .game .cards-wrapper .cards .icons .icon {
   width: 10vw;
   height: 10vw;
@@ -198,6 +202,94 @@ a {
   visibility: visible;
 }
 
+.control-icon {
+  width: 3rem;
+  height: 2.6rem;
+  background: linear-gradient(to bottom, #f8d258 2%, #f0b700);
+  color: #fff;
+  font-size: 1.5rem;
+  border: 0.25rem solid #55a7f3;
+  border-radius: 32%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 992px) {
+  .control-icon {
+    width: 4.5vw;
+    height: 4vw;
+    font-size: 2vw;
+  }
+}
+@media (min-width: 1200px) {
+  .control-icon {
+    width: 4vw;
+    height: 3.5vw;
+    font-size: 1.5vw;
+  }
+}
+@media (min-width: 1400px) {
+  .control-icon {
+    width: 3.2vw;
+    height: 2.9vw;
+    font-size: 1.2vw;
+    border: 0.2vw solid #55a7f3;
+    box-shadow: 0 0.2vw 0.2vw rgba(0, 0, 0, 0.25);
+  }
+}
+.control-icon.bottom {
+  position: relative;
+}
+.control-icon.bottom.show::before {
+  animation-name: visible;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+.control-icon.bottom.hide::before {
+  transform: scaleX(0);
+}
+.control-icon.bottom::before {
+  content: attr(text);
+  padding: 0.6rem 1.5rem;
+  position: absolute;
+  left: 80%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(249, 48, 101, 0);
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: MochiyPopPOne-Regular;
+  white-space: nowrap;
+  letter-spacing: 0.1vw;
+  border-radius: 0 1rem 1rem 0;
+  transition: 0.5s;
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+  transform-origin: 0 50%;
+}
+@media (min-width: 768px) {
+  .control-icon.bottom::before {
+    padding: 0.7vw 2.5vw;
+    font-size: 1.875vw;
+    border-radius: 0 1.2vw 1.2vw 0;
+  }
+}
+@media (min-width: 992px) {
+  .control-icon.bottom::before {
+    padding: 0.6vw 2.5vw;
+    font-size: 1.5vw;
+  }
+}
+@media (min-width: 1200px) {
+  .control-icon.bottom::before {
+    padding: 0.475vw 2.5vw;
+    font-size: 1.25vw;
+  }
+}
+.control-icon.pause {
+  position: absolute;
+  top: 85%;
+}
+
 .homepage {
   width: 100vw;
   height: 100vh;
@@ -218,12 +310,45 @@ a {
   z-index: 999;
 }
 .homepage .vector.cloud {
-  width: 70vw;
+  width: 100vw;
   top: 37%;
+}
+@media (min-width: 576px) {
+  .homepage .vector.cloud {
+    width: 75vw;
+  }
+}
+@media (min-width: 768px) {
+  .homepage .vector.cloud {
+    width: 70vw;
+  }
+}
+@media (min-width: 992px) {
+  .homepage .vector.cloud {
+    width: 70vw;
+  }
 }
 .homepage .vector.plane {
   width: 25vw;
-  right: -20%;
+}
+.homepage .vector.bags {
+  width: 60vw;
+  z-index: 1;
+}
+@media (min-width: 576px) {
+  .homepage .vector.bags {
+    width: 50vw;
+  }
+}
+@media (min-width: 768px) {
+  .homepage .vector.bags {
+    width: 40vw;
+  }
+}
+@media (min-width: 992px) {
+  .homepage .vector.bags {
+    width: 30vw;
+  }
 }
 .homepage .text {
   top: 26%;
@@ -307,7 +432,7 @@ a {
   height: 30%;
 }
 .game .game-vector.plane {
-  width: 40vw;
+  width: 70vw;
   position: relative;
   left: 10%;
 }
@@ -319,21 +444,89 @@ a {
   transform: translate(-50%, -50%) rotate(-7.074deg);
   color: #ef0d53;
   font-family: MochiyPopPOne-Regular;
-  font-size: 2.125rem;
-  font-size: 2vw;
+  font-size: 5vw;
   white-space: nowrap;
 }
 .game .game-vector.plane .vector-text:first-letter {
   text-transform: capitalize;
 }
+@media (min-width: 576px) {
+  .game .game-vector.plane {
+    width: 60vw;
+  }
+  .game .game-vector.plane .vector-text {
+    font-size: 3.75vw;
+  }
+}
+@media (min-width: 768px) {
+  .game .game-vector.plane {
+    width: 50vw;
+  }
+  .game .game-vector.plane .vector-text {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 992px) {
+  .game .game-vector.plane .vector-text {
+    font-size: 2vw;
+  }
+}
 .game .game-vector.banner {
-  width: 20vw;
+  width: 30vw;
+  height: 40vw;
   position: fixed;
   right: 0;
   bottom: 0;
 }
-.game .cards-wrapper {
-  flex-grow: 1;
+@media (min-width: 480px) {
+  .game .game-vector.banner {
+    width: 24vw;
+  }
+}
+@media (min-width: 576px) {
+  .game .game-vector.banner {
+    width: 19vw;
+  }
+}
+@media (min-width: 768px) {
+  .game .game-vector.banner {
+    width: 17vw;
+  }
+}
+@media (min-width: 992px) {
+  .game .game-vector.banner {
+    width: 12vw;
+  }
+}
+.game .cards-wrapper .arrow {
+  width: 6.25vw;
+  height: 8vw;
+  margin: auto 0;
+  border-radius: 1.25rem;
+  font-size: 4vw;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 768px) {
+  .game .cards-wrapper .arrow {
+    width: 5.25vw;
+    height: 7vw;
+    font-size: 3.5vw;
+  }
+}
+@media (min-width: 992px) {
+  .game .cards-wrapper .arrow {
+    width: 4.25vw;
+    height: 6vw;
+    font-size: 3vw;
+    border-radius: 1.4vw;
+  }
+}
+.game .cards-wrapper .arrow .fa-solid {
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+}
+.game .cards-wrapper .arrow.disabled {
+  color: #777777;
 }
 .game .cards-wrapper .cards {
   position: relative;

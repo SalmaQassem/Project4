@@ -8,9 +8,11 @@
   text-transform: capitalize;
   line-height: 6vw;
 }
-
 %card-f-b {
   backface-visibility: hidden;
+}
+%iconBackground {
+  background: linear-gradient(5deg, $pink-7 40%, $pink-8 40% 100%);
 }
 %icon {
   width: 10vw;
@@ -160,6 +162,103 @@
     visibility: visible;
   }
 }
+.control-icon {
+  width: 3rem;
+  height: 2.6rem;
+  background: linear-gradient(to bottom, $yellow-4 2%, $yellow-3);
+  color: $white-1;
+  font-size: 1.5rem;
+  border: 0.25rem solid $blue-3;
+  border-radius: 32%;
+  box-shadow: 0 0.25rem 0.25rem $shadow-1;
+  @include mediaQuery($largeScreen_min_width) {
+    & {
+      width: 4.5vw;
+      height: 4vw;
+      font-size: 2vw;
+    }
+  }
+  @include mediaQuery($XlargeScreen_min_width) {
+    & {
+      width: 4vw;
+      height: 3.5vw;
+      font-size: 1.5vw;
+    }
+  }
+  @include mediaQuery($XXlargeScreen_min_width) {
+    & {
+      width: 3.2vw;
+      height: 2.9vw;
+      font-size: 1.2vw;
+      border: 0.2vw solid $blue-3;
+      box-shadow: 0 0.2vw 0.2vw $shadow-1;
+    }
+  }
+  &.volume {
+    @extend %iconBackground;
+  }
+  &.bottom {
+    position: relative;
+    &.show {
+      &::before {
+        animation-name: visible;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+      }
+    }
+    &.hide {
+      &::before {
+        transform: scaleX(0);
+      }
+    }
+    &::before {
+      content: attr(text);
+      padding: 0.6rem 1.5rem;
+      position: absolute;
+      left: 80%;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $pink-4;
+      color: $white-1;
+      font-size: 0.8rem;
+      font-family: MochiyPopPOne-Regular;
+      white-space: nowrap;
+      letter-spacing: 0.1vw;
+      border-radius: 0 1rem 1rem 0;
+      transition: 0.5s;
+      filter: drop-shadow(0 0.25rem 0.25rem $shadow-1);
+      transform-origin: 0 50%;
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          padding: 0.7vw 2.5vw;
+          font-size: 1.875vw;
+          border-radius: 0 1.2vw 1.2vw 0;
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          padding: 0.6vw 2.5vw;
+          font-size: 1.5vw;
+        }
+      }
+      @include mediaQuery($XlargeScreen_min_width) {
+        & {
+          padding: 0.475vw 2.5vw;
+          font-size: 1.25vw;
+        }
+      }
+    }
+  }
+  &.music {
+    @extend %iconBackground;
+  }
+  &.pause {
+    position: absolute;
+    top: 85%;
+  }
+}
 .homepage {
   width: 100vw;
   height: 100vh;
@@ -180,15 +279,46 @@
 
   .vector {
     z-index: 999;
-
     &.cloud {
-      width: 70vw;
+      width: 100vw;
       top: 37%;
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          width: 75vw;
+        }
+      }
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: 70vw;
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          width: 70vw;
+        }
+      }
     }
-
     &.plane {
       width: 25vw;
-      right: -20%;
+    }
+    &.bags {
+      width: 60vw;
+      z-index: 1;
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          width: 50vw;
+        }
+      }
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: 40vw;
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          width: 30vw;
+        }
+      }
     }
   }
 
@@ -288,10 +418,9 @@
   .game-vector {
     height: 30%;
     &.plane {
-      width: 40vw;
+      width: 70vw;
       position: relative;
       left: 10%;
-
       .vector-text {
         display: block;
         position: absolute;
@@ -300,25 +429,96 @@
         transform: translate(-50%, -50%) rotate(-7.074deg);
         color: $pink-5;
         font-family: MochiyPopPOne-Regular;
-        font-size: 2.125rem;
-        font-size: 2vw;
+        font-size: 5vw;
         white-space: nowrap;
-
         &:first-letter {
           text-transform: capitalize;
+        }
+      }
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          width: 60vw;
+          .vector-text {
+            font-size: 3.75vw;
+          }
+        }
+      }
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: 50vw;
+          .vector-text {
+            font-size: 2.5vw;
+          }
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          .vector-text {
+            font-size: 2vw;
+          }
         }
       }
     }
 
     &.banner {
-      width: 20vw;
+      width: 30vw;
+      height: 40vw;
       position: fixed;
       right: 0;
       bottom: 0;
+      @include mediaQuery($Tablet_min_width) {
+        & {
+          width: 24vw;
+        }
+      }
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          width: 19vw;
+        }
+      }
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: 17vw;
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          width: 12vw;
+        }
+      }
     }
   }
   .cards-wrapper {
-    flex-grow: 1;
+    .arrow {
+      width: 6.25vw;
+      height: 8vw;
+      margin: auto 0;
+      border-radius: 1.25rem;
+      font-size: 4vw;
+      background-color: $white-1;
+      box-shadow: 0 0.25rem 0.25rem $shadow-1;
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: 5.25vw;
+          height: 7vw;
+          font-size: 3.5vw;
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          width: 4.25vw;
+          height: 6vw;
+          font-size: 3vw;
+          border-radius: 1.4vw;
+        }
+      }
+      .fa-solid {
+        filter: drop-shadow(0 0.25rem 0.25rem $shadow-1);
+      }
+      &.disabled {
+        color: $grey-2;
+      }
+    }
     .cards {
       position: relative;
       gap: 10%;
