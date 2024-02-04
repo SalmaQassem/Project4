@@ -17,6 +17,7 @@
   <body>
     <div class="overlay position-fixed top-50 start-50 translate-middle"></div>
     <div class="success-card rounded-5 p-3">
+      <button class="closeModal rounded-circle"><i class="fa-solid fa-xmark"></i></button>
       <div class="card-wrapper h-100 rounded-5">
         <div
           class="img-wrapper d-flex justify-content-center align-items-center"
@@ -32,8 +33,12 @@
             class="text-card d-flex gap-3 justify-content-center align-items-center"
           >
             <div class="content d-flex flex-column align-items-center">
-              <span class="message-text">correct answer</span>
-              <span class="score-text">5/5</span>
+              <span class="message-text"
+                >your score is: <span class="score"></span
+              ></span>
+              <span
+                class="score-text d-flex justify-content-center gap-2 flex-wrap"
+              ></span>
             </div>
             <div class="score-icon-wrapper">
               <img

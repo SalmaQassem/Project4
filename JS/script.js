@@ -55,7 +55,52 @@ recordIcons.forEach((icon) => {
     });
   });
 });
+const checkScore = (score) => {
+  if (score >= 70) {
+    return "green";
+  } else if (score < 70 && score >= 40) {
+    return "yellow";
+  } else {
+    return "red";
+  }
+};
+window.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (
+    !successModal.contains(e.target) &&
+    e.target !== document.querySelector(".show-success") &&
+    successModal.classList.contains("show")
+  ) {
+    successModal.classList.remove("show");
+    setTimeout(() => {
+      overlay.classList.remove("show");
+    }, 400);
+  }
+});
 document.querySelector(".show-success").addEventListener("click", () => {
   successModal.classList.add("show");
   overlay.classList.add("show");
+  const score = 70;
+  const scoreElement = document.querySelector(".score");
+  scoreElement.textContent = `${score}%`;
+  const className = checkScore(score);
+  scoreElement.classList.add(className);
+  const words = [
+    { text: "first", score: 60 },
+    { text: "second", score: 20 },
+  ];
+  document.querySelector(".score-text").innerHTML = "";
+  words.forEach((word) => {
+    const className = checkScore(word.score);
+    const newSpan = document.createElement("span");
+    newSpan.textContent = `${word.text}:(${word.score}%)`;
+    newSpan.classList.add(className);
+    document.querySelector(".score-text").appendChild(newSpan);
+  });
+});
+document.querySelector(".closeModal").addEventListener("click", () => {
+  successModal.classList.remove("show");
+  setTimeout(() => {
+    overlay.classList.remove("show");
+  }, 400);
 });
