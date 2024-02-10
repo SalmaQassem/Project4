@@ -635,7 +635,8 @@
         }
       }
       .icons {
-        .icon {
+        .icon,
+        .icon-new {
           @extend %icon;
           &.sound {
             &.clicked {

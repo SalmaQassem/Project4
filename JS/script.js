@@ -4,6 +4,7 @@ const gamePage = document.querySelector(".game");
 const cards = document.querySelectorAll(".card-wrapper");
 const soundIcons = document.querySelectorAll(".icon.sound");
 const recordIcons = document.querySelectorAll(".icon.speak");
+const recordIcons1 = document.querySelectorAll(".icon-new.speak");
 const successModal = document.querySelector(".success-card");
 const overlay = document.querySelector(".overlay");
 playButton.addEventListener("click", () => {
@@ -24,7 +25,17 @@ cards.forEach((card) => {
     const icons = document.querySelectorAll(
       `.icons[data-id="${cardId}"] .icon`
     );
+    const icons2 = document.querySelectorAll(
+      `.icons[data-id="${cardId}"] .icon-new`
+    );
     icons.forEach((icon) => {
+      icon.style.visibility = "visible";
+      icon.classList.add("show");
+      icon.addEventListener("animationend", () => {
+        icon.classList.remove("show");
+      });
+    });
+    icons2.forEach((icon) => {
       icon.style.visibility = "visible";
       icon.classList.add("show");
       icon.addEventListener("animationend", () => {
@@ -55,6 +66,16 @@ recordIcons.forEach((icon) => {
     });
   });
 });
+recordIcons1.forEach((icon) => {
+  icon.addEventListener("click", (e) => {
+    icon.classList.add("animate");
+    icon.querySelector("img").src = "../media/images/microphone.svg";
+    setTimeout(() => {
+      icon.classList.remove("animate");
+      icon.querySelector("img").src = "../media/images/speakIcon.svg";
+    }, 5000);
+  });
+});
 const checkScore = (score) => {
   if (score >= 70) {
     return "green";
@@ -65,7 +86,6 @@ const checkScore = (score) => {
   }
 };
 window.addEventListener("click", (e) => {
-  console.log(e.target);
   if (
     !successModal.contains(e.target) &&
     e.target !== document.querySelector(".show-success") &&
